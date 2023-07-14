@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  --body-bg: #212121;
+  --neon-color: #0098DA;
+  --neon-shadow-color: #0098DA;
+  --neon-dark-color: #0277bd80;
+}
+
+body {
+  background-color: var(--body-bg);
+  .neon {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+p {
+    margin-left: 2.5rem;
+  font-family: "Pacifico", 'cursive';
+  font-weight: regular;
+  font-size: 10rem;
+  color: transparent;
+  text-shadow: 0 -40px 100px, 
+    0 0 2px, 
+    0 0 50px var(--neon-shadow-color),
+    0 0 8px var(--neon-shadow-color),
+    0 0 1px var(--neon-shadow-color);
+  -webkit-text-stroke: 4px var(--neon-color);
+}
+
+p span {
+  animation: blink 1.5s linear infinite;
+  &:nth-child(2) {
+    animation: blink 1.5s linear 0.25s infinite;
+  }
+}
+
+@keyframes blink {
+  78%, 81%, 83%, 92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% {
+    color: var(--neon-dark-color);
+  }
+  80% {
+    text-shadow: none;
+  }
+  82%, 92% {
+    color: var(--neon-dark-color);
+    text-shadow: none;
+  }
+}
